@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta name="description"
+	content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
+<meta name="keywords"
+	content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
+<meta name="author" content="PIXINVENT">
+<title>Colony: The Admin-panel:CExpress by Sweet iTech</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+	integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+	crossorigin="anonymous">
+<link rel="shortcut icon" type="image/x-icon"
+	th:href="@{/app-assets/images/logo.png}">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
+	rel="stylesheet">
+<link
+	href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
+	rel="stylesheet">
+<!-- BEGIN VENDOR CSS-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/vendors.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/forms/selects/select2.min.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/forms/icheck/icheck.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/forms/icheck/custom.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/forms/toggle/bootstrap-switch.min.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/forms/toggle/switchery.min.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/extensions/sweetalert.css}">
+<!-- END VENDOR CSS-->
+<!-- BEGIN MODERN CSS-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/app.css}">
+<!-- END MODERN CSS-->
+<!-- BEGIN Page Level CSS-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/core/menu/menu-types/vertical-menu-modern.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/core/colors/palette-gradient.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/plugins/forms/checkboxes-radios.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/plugins/forms/switch.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/file-uploaders/dropzone.min.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/plugins/file-uploaders/dropzone.css}">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/ui/jquery-ui.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/plugins/ui/jqueryui.css}">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- <link
+	th:href="@{/app-assets/dropify/dist/css/dropify.min.css}"
+	rel="stylesheet" type="text/css" /> -->
+
+<!-- jQuery library -->
+
+<!-- END Page Level CSS-->
+<!-- BEGIN Custom CSS-->
+<!-- BEGIN Page Level CSS-->
+<!-- END Page Level CSS-->
+</head>
+<body
+	class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar"
+	data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+	<!-- fixed-top-->
+	<!-- Top Menu Items -->
+	<div th:replace="fragments/header :: header"></div>
+	<!-- /Top Menu Items -->
+	<!-- Left Sidebar Menu -->
+	<div th:replace="fragments/leftsidebar :: leftsidebar"></div>
+	<!-- /Left Sidebar Menu -->
+	<!-- ////////////////////////////////////////////////////////////////////////////-->
+	<div class="app-content content">
+		<div class="content-wrapper">
+			<div class="content-header row">
+				<div class="content-header-left col-md-6 col-12 mb-2">
+					<h3 class="content-header-title mb-0 d-inline-block">Create
+						Employee</h3>
+
+				</div>
+				<div class="content-header-right col-md-6 col-12"></div>
+			</div>
+			<div class="content-body">
+				<!-- Revenue, Hit Rate & Deals -->
+
+				<!-- below anchor tag is	for scrolling only -->
+				<a href="javascript:" id="return-to-top"><i
+					class="icon-chevron-up"></i></a>
+
+				<div class="row">
+					<div class="col-md-3">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="card-title">
+									<span style="color: red">*</span>&nbsp denotes required field
+								</h4>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="card-title">Role Info</h4>
+							</div>
+							<div class="card-block">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-md-11">
+											<div class="form-group">
+												<label> Select Role <span style="color: red">*</span></label>
+												<select class="select2 form-control role-name">
+													<optgroup label="">
+														<option th:each="role : ${roleList}" th:value="${role.id}"
+															th:text="${role.name}"></option>
+													</optgroup>
+												</select>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="card-title">Profile Picture</h4>
+							</div>
+							<div class="card-block">
+								<div class="card-body">
+									<fieldset class="form-group">
+										<form id="upload-file-form">
+											<input id="upload-file-input" type="file" name="uploadfile"
+												class="dropify"
+												th:attr="data-default-file=${baseLocation+employee.profilePicture.url}"
+												data-max-file-size="1000K" />
+
+										</form>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+
+
+				<form id="registerEmployee" method="post"
+					onsubmit="return swalcall() " th:action="@{/employee/create}"
+					th:object="${employee}">
+					<div class="row ">
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title">Login Info</h4>
+								</div>
+								<input type="hidden" id="roleId" th:field="*{roleId}" /> <input
+									type="hidden" th:field="*{createdBy}" /> <input type="hidden"
+									class="profilepictureid" th:field="*{profilePictureId}" />
+								<div class="card-block">
+
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-8">
+												<div class="form-group">
+													<label> User Name <span style="color: red">*</span></label>
+													<span style="color: red" class="error-username"></span> <input
+														class="form-control username-check" th:field="*{username}"
+														pattern=".{2,}" autocomplete="off" required="required"
+														title="Enter At least 2 Characters"
+														placeholder="Enter Employee  UserName">
+												</div>
+											</div>
+											<div class="col-md-6"></div>
+										</div>
+										<div class="row">
+											<div class="col-md-8">
+												<div class="form-group">
+													<label>Password <span style="color: red">*</span></label> <input
+														type="password" class="form-control"
+														th:field="*{password}" autocomplete="off"
+														title="Enter At least 6 Characters" required="required"
+														placeholder="Enter Employee password" pattern=".{6,}">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-8">
+												<div class="form-group">
+													<label>Confirm password <span style="color: red">*</span></label>
+													<input type="password" class="form-control"
+														autocomplete="off" required="required"
+														placeholder="Enter Employee password">
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title">Basic Info</h4>
+								</div>
+								<div class="card-block">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>First Name <span style="color: red">*</span></label>
+													<input class="form-control" required="required"
+														pattern=".{2,}" title="Enter At least 2 Characters"
+														th:field="*{firstName}" placeholder="Enter First Name">
+												</div>
+											</div>
+
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Last Name <span style="color: red">*</span></label>
+													<input class="form-control" required="required"
+														pattern=".{2,}" title="Enter At least 2 Characters"
+														th:field="*{lastName}" placeholder="Enter Last Name">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label> Date of Birth<span style="color: red">*</span></label>
+
+													<div class="input-group">
+														<div class="input-group-prepend">
+															<span class="input-group-text"><i
+																class="ft-calendar"></i></span>
+														</div>
+														<input type="text" id="datepicker" th:field="*{dob}"
+															class="form-control datepicker" required="required"
+															placeholder="Enter DOB" />
+
+													</div>
+
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Nationality</label> <input class="form-control"
+														th:field="*{nationality}" placeholder="Enter Nationality">
+												</div>
+											</div>
+
+
+										</div>
+
+										<div class="row">
+											<div class="col-md-4">
+												<div class="form-group">
+													<label>National Id</label> <input class="form-control"
+														th:field="*{nationalId}" placeholder="Enter National Id">
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group">
+													<label>License No</label> <input class="form-control"
+														th:field="*{licenseNumber}"
+														placeholder="Enter National Id">
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="form-group">
+													<label>Passport Number</label> <input type="text"
+														class="form-control" th:field="*{passportNumber}"
+														placeholder="Enter Passport Number">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Marital Status<span style="color: red">*</span></label><br />
+													<input type="radio" class="" th:field="*{maritalStatus}"
+														th:value="Married" /> <label>Married</label> <input
+														type="radio" class="" name="colorRadio"
+														th:field="*{maritalStatus}" th:value="Unmarried"
+														style="margin-left: 15px"> <label>Unmarried</label>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Gender<span style="color: red">*</span></label><br />
+													<input type="radio" class="" th:field="*{gender}"
+														th:value="Male" /> <label>Male</label> <input
+														type="radio" class="" name="colorRadio"
+														th:field="*{gender}" th:value="Female"
+														style="margin-left: 15px"> <label>Female</label>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Select Blood Group<span style="color: red">*</span></label><select
+														class="select2 form-control" th:field="*{bloodGroup}"
+														required="required">
+														<optgroup label="">
+															<option th:each="bloodgroup : ${bloodgroupList}"
+																th:value="${bloodgroup}" th:text="${bloodgroup}"></option>
+														</optgroup>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Religion</label> <input class="form-control"
+														th:field="*{religion}" placeholder="Enter Religion">
+												</div>
+											</div>
+
+
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title">Professional Info</h4>
+								</div>
+								<div class="card-block">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Designation<span style="color: red">*</span></label>
+													<input class="form-control" th:field="*{designation}"
+														pattern=".{2,}" title="Enter At least 2 Characters"
+														placeholder="Enter Designation" required="required">
+												</div>
+											</div>
+
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Joining Date<span style="color: red">*</span></label>
+
+													<div class="input-group">
+														<div class="input-group-prepend">
+															<span class="input-group-text"><i
+																class="ft-calendar"></i></span>
+														</div>
+
+														<input type="text" id="datepicker2"
+															th:field="*{joiningDate}" class="form-control datepicker"
+															required placeholder="Enter Joining Date" />
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title">Contact Info</h4>
+								</div>
+								<div class="card-block">
+									<div class="card-body">
+
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Mobile No<span style="color: red">*</span>
+													</label> <input type="number" class="form-control"
+														required="required" pattern=".{6,}"
+														title="Enter At least 6 Digits" th:field="*{mobile}"
+														placeholder="Enter Mobile No">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Email </label> <input type="email"
+														class="form-control" th:field="*{email}"
+														placeholder="Enter Email">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<label>Present Address<span style="color: red">*</span></label>
+													<textarea class="form-control" required="required"
+														th:field="*{presentAddress}" rows="2"></textarea>
+												</div>
+											</div>
+
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<label>Permanent Address<span style="color: red">*</span></label>
+													<textarea class="form-control" required="required"
+														th:field="*{permanentAddress}" rows="2"></textarea>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+
+							<!--  -->
+						</div>
+					</div>
+
+					<div class="row">
+
+
+
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title">Emergency Contact Info</h4>
+								</div>
+								<div class="card-block">
+									<div class="card-body">
+										<fieldset class="form-group">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Contact Person Name<span style="color: red">*</span>
+														</label> <input th:field="*{emergencyContactName}" pattern=".{2,}"
+															title="Enter At least 2 Characters" class="form-control"
+															required="required"
+															placeholder="Enter Contact Person Name">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Relation with Employee<span
+															style="color: red">*</span></label> <input th:field="*{relation}"
+															pattern=".{3,}" class="form-control" required="required"
+															title="Enter At least 3 Characters"
+															placeholder="Enter Relation with Employee">
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Mobile No<span style="color: red">*</span>
+														</label> <input class="form-control" required="required"
+															th:field="*{emergencyContactMobile}"
+															placeholder="Enter Mobile No">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label>Address<span style="color: red">*</span></label>
+														<textarea class="form-control" required="required"
+															th:field="*{emergencyContactAddress}" rows="2"></textarea>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-block">
+									<div class="card-body">
+								<label style="margin-top: 4%; white-space: pre-wrap;">Attachment File Upload (PDF)
+												</label> 
+												<input id="file-input" type="file" onchange="uploadFunction()"
+												name="uploadfile" style="margin-top: 1%; margin-left: 5%;"
+												data-max-file-size="1000K">
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-md-6"></div>
+						<div class="col-md-6">
+							<div class="card">
+								<div class="card-block">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6"></div>
+											<div class="col-md-6">
+												<div>
+													<a th:href="@{/employee/view}">
+														<button type="button" class="btn btn-warning mr-1">
+															<i class="ft-x"></i> Cancel
+														</button>
+													</a>
+
+													<button type="submit" id="registerbutton"
+														class="bla btn btn-primary register">
+														<i class="la la-check-square-o"></i> Register
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+	<!-- ////////////////////////////////////////////////////////////////////////////-->
+	<footer
+		class="footer footer-static footer-light navbar-border navbar-shadow">
+
+	</footer>
+	<!-- BEGIN VENDOR JS-->
+	<script th:src="@{/app-assets/vendors/js/vendors.min.js}"
+		type="text/javascript"></script>
+	<!-- BEGIN VENDOR JS-->
+	<!-- BEGIN PAGE VENDOR JS-->
+	<script th:src="@{/app-assets/vendors/js/forms/icheck/icheck.min.js}"
+		type="text/javascript"></script>
+	<script
+		th:src="@{/app-assets/vendors/js/forms/toggle/bootstrap-checkbox.min.js}"
+		type="text/javascript"></script>
+	<script
+		th:src="@{/app-assets/vendors/js/forms/toggle/bootstrap-switch.min.js}"
+		type="text/javascript"></script>
+	<script
+		th:src="@{/app-assets/vendors/js/forms/toggle/switchery.min.js}"
+		type="text/javascript"></script>
+	<script
+		th:src="@{/app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js}"
+		type="text/javascript"></script>
+
+	<script
+		th:src="@{/app-assets/vendors/js/forms/extended/typeahead/typeahead.bundle.min.js}"
+		type="text/javascript"></script>
+	<script
+		th:src="@{/app-assets/vendors/js/forms/extended/typeahead/bloodhound.min.js}"
+		type="text/javascript"></script>
+	<script th:src="@{/app-assets/vendors/js/extensions/sweetalert.min.js}"
+		type="text/javascript"></script>
+	<!-- END PAGE VENDOR JS-->
+	<!-- BEGIN MODERN JS-->
+	<script th:src="@{/app-assets/js/core/app-menu.js}"
+		type="text/javascript"></script>
+	<script th:src="@{/app-assets/js/core/app.js}" type="text/javascript"></script>
+	<!-- <script th:src="@{/app-assets/js/scripts/customizer.js}"
+		type="text/javascript"></script> -->
+	<script
+		th:src="@{/app-assets/vendors/js/forms/select/select2.full.min.js}"
+		type="text/javascript"></script>
+	<!-- END MODERN JS-->
+	<!-- BEGIN PAGE LEVEL JS-->
+	<script th:src="@{/app-assets/js/scripts/forms/checkbox-radio.js}"
+		type="text/javascript"></script>
+	<script th:src="@{/app-assets/js/scripts/forms/switch.js}"
+		type="text/javascript"></script>
+	<script th:src="@{/app-assets/js/scripts/forms/input-groups.js}"
+		type="text/javascript"></script>
+	<script th:src="@{/app-assets/js/scripts/forms/select/form-select2.js}"
+		type="text/javascript"></script>
+	<!-- <script th:src="@{/app-assets/vendors/js/extensions/dropzone.min.js}" type="text/javascript"></script>  -->
+	<script th:src="@{/app-assets/vendors/js/ui/prism.min.js}"
+		type="text/javascript"></script>
+
+
+	<script
+		th:src="@{/app-assets/js/core/libraries/jquery_ui/jquery-ui.min.js}"
+		type="text/javascript"></script>
+	<script th:src="@{/app-assets/js/scripts/ui/jquery-ui/date-pickers.js}"
+		type="text/javascript"></script>
+
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
+
+	<!-- END PAGE LEVEL JS-->
+</body>
+<style>
+#basicTextarea {
+	height: 147px;
+}
+
+.tt-query {
+	/* UPDATE: newer versions use tt-input instead of tt-query */
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+	color: #999;
+	display: none;
+}
+
+.tt-menu {
+	/* UPDATE: newer versions use tt-menu instead of tt-dropdown-menu */
+	width: 422px;
+	margin-top: 12px;
+	padding: 8px 0;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.tt-suggestion {
+	padding: 3px 20px;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+	/* UPDATE: newer versions use .tt-suggestion.tt-cursor */
+	color: #fff;
+	background-color: #0097cf;
+}
+
+.tt-suggestion p {
+	margin: 0;
+}
+
+.dropzone {
+	min-height: 194px;
+}
+
+dropzone .dz-preview .dz-image {
+	width: 700px;
+	height: 600px;
+}
+</style>
+
+<script th:inline="javascript">
+
+$('.dropify').dropify();
+
+$(".mydatepicker").datepicker({
+	dateFormat : 'yy-mm-dd'
+}).datepicker().attr('readonly', true);
+
+ $('#registerbutton').on('click',function(event){
+	
+	 if($('#upload-file-input').val()=="")
+		{
+		 console.log("upload file:"+$('#upload-file-input').val());
+		 $('.profilepictureid').val("417");
+		 console.log("Profile picture id:"+ $('.profilepictureid').val());
+		}
+	 else
+		{
+		 uploadFile();
+		 console.log("Profile picture id:"+ $('.profilepictureid').val());
+		}
+	
+	//uploadFile();
+	
+	
+	
+})
+ $('.username-check').on('focusout',function(){
+	 var username=$(this).val();
+	 if($(this).val()!=="")
+		{
+		 $.ajax({
+			  type: 'get',
+			  url: /*[[ @{'/register/employee/checkusername'} ]]*/,
+			  data:  { username: username},
+			  success: function(data){
+				  console.log(data);
+				  var checkdata = data;
+				  //checkdata = false;
+				  if(checkdata ==='false')
+					{
+					  
+					  $('.username-check').val("");
+					  $('.error-username').text(" This Username already exists");
+					  
+					}
+				  else
+					 {
+					  $('.error-username').text("");
+					 }
+				},
+			  async:false
+			});
+		}
+ })
+
+
+	 function swalcall() {
+	 	//uploadFile();
+		swal("Created!", "Your Employee profile has been Created.", "success");
+
+	} 
+	
+	$(".role-name option:selected").each(function() {
+		console.log($(this).val());
+		$('#roleId').val($(this).val());
+		
+	});
+	
+	$(".role-name").change(function() {
+		$(".role-name option:selected").each(function() {
+			console.log($(this).val());
+			$('.roleId').val($(this).val());
+			
+		});
+
+	})
+
+
+	function uploadFile() {
+		
+		 //var id;
+		  $.ajax({
+		    url: /*[[ @{'/upload'} ]]*/,
+		    type: "POST",
+		    data: new FormData($("#upload-file-form")[0]),
+		    enctype: 'multipart/form-data',
+		    processData: false,
+		    async: false,
+		    contentType: false,
+		    cache: false,
+		    success: function (data) {
+		    	
+		     console.log(data);
+		     $('.profilepictureid').val(data.id);
+		    },
+		    error: function () {
+		      // Handle upload error
+		      // ...
+		    }
+		  });
+		  /* return id; */
+		} // fu
+		
+		
+		function myFunction(){
+			  var x = document.getElementById("file-input");
+			  
+			  
+		}
+		
+		
+		$( function() {
+		    $( ".datepicker" ).datepicker({
+		      changeMonth: true,
+		      changeYear: true,
+		      readOnly:true,
+		      dateFormat: "yy-mm-dd",
+		      yearRange: "1930:2050",
+		     
+		    });
+
+		  } );
+		$(".datepicker").attr("required", true);
+
+</script>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta name="description"
+	content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
+<meta name="keywords"
+	content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
+<meta name="author" content="PIXINVENT">
+<title>Colony: The HR Module by Sweet iTech</title>
+<link rel="shortcut icon" type="image/x-icon"
+	th:href="@{/app-assets/images/logo.png}">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
+	rel="stylesheet">
+<link
+	href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
+	rel="stylesheet">
+<!-- BEGIN VENDOR CSS-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/vendors.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/forms/icheck/icheck.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/forms/icheck/custom.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/vendors/css/extensions/sweetalert.css}">
+	
+<!-- END VENDOR CSS-->
+<!-- BEGIN MODERN CSS-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/app.css}">
+<!-- END MODERN CSS-->
+<!-- BEGIN Page Level CSS-->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/core/menu/menu-types/vertical-menu-modern.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/core/colors/palette-gradient.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/app-assets/css/pages/login-register.css}">
+<!-- BEGIN Custom CSS-->
+
+<!-- END Custom CSS-->
+</head>
+<body
+	class="vertical-layout vertical-menu-modern 1-column   menu-expanded blank-page blank-page"
+	data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
+	<!-- ////////////////////////////////////////////////////////////////////////////-->
+	<div class="app-content content">
+		<div class="content-wrapper">
+			<div class="content-header row"></div>
+			<div class="content-body">
+				<section class="flexbox-container">
+					<div
+						class="col-12 d-flex align-items-center justify-content-center">
+						<div class="col-md-4 col-10 box-shadow-2 p-0">
+							<div class="card border-grey border-lighten-3 m-0">
+								<div class="card-header border-0">
+									<div class="card-title text-center">
+										<img
+											th:src="@{/app-assets/images/clientlogo.png}"
+											style="max-width: 100%; height: auto;" title="TODO"
+											alt="avatar">
+										<div class="p-1">Welcome to HR Module</div>
+									</div>
+									<h6
+										class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
+										<span>Login with your info</span>
+									</h6>
+								</div>
+								<div class="card-content">
+									<div class="card-body">
+										<form class="form-horizontal form-simple" action="login"
+											method='POST'>
+											<label th:if="${param.error}"
+												th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"
+												class="text-center redText" style="color: red">Mot
+												de passe inconnu</label>
+											<fieldset
+												class="form-group position-relative has-icon-left mb-0">
+												<label for="user-name">Your Username</label> <input
+													type="text" class="form-control form-control-lg input-lg"
+													id="user-name" name="username"
+													placeholder="Enter Your Username" required>
+												<!-- <div class="form-control-position">
+                          <i class="ft-user"></i>
+                        </div> -->
+											</fieldset>
+											<fieldset class="form-group position-relative has-icon-left">
+												<label for="user-password">Enter Password</label> <input
+													type="password"
+													class="form-control form-control-lg input-lg"
+													id="user-password" name="password"
+													placeholder="Enter Password" required>
+												<!-- <div class="form-control-position">
+                          <i class="la la-key"></i>
+                        </div> -->
+											</fieldset>
+											 <div class="form-group row">
+                        <div class="col-md-6 col-12 text-center text-md-left">
+                          <fieldset>
+                    <!--       <input type="checkbox" id="remember-me" class="chk-remember">
+                            <label for="remember-me"> Remember Me</label>
+                          </fieldset>-->   
+                        </div>
+                        <div class="col-md-6 col-12 text-center text-md-right"><a data-toggle="modal" href="#myModal" class="card-link">Forgot Password?</a></div>
+                      </div> 
+											<button type="submit" class="btn btn-info btn-lg btn-block">
+												<i class="ft-unlock"></i> Login
+											</button>
+											<br />
+
+
+											<!-- <a th:href="@{/register/employee/change/username}"><button type="button" class="btn btn-info btn-lg btn-block"><i class="ft-unlock"></i> Register Company</button></a> <br/>
+                      <a th:href="@{/register/department}"><button type="button" class="btn btn-info btn-lg btn-block"><i class="ft-unlock"></i> View Department </button></a> <br/> -->
+											<!-- <a th:href="@{/register/department}"><button type="button" class="btn btn-info btn-lg btn-block"><i class="ft-unlock"></i> View Department </button></a> <br/>
+                      <a th:href="@{/register/employee}"><button type="button" class="btn btn-info btn-lg btn-block"><i class="ft-unlock"></i> Register Employee</button></a> <br/>
+                      <a th:href="@{/register/employee/view}"><button type="button" class="btn btn-info btn-lg btn-block"><i class="ft-unlock"></i> View Employee</button></a> <br/>  -->
+
+
+										</form>
+									</div>
+								</div>
+								<!-- <div class="card-footer">
+                  <div class="">
+                    <p class="float-sm-left text-center m-0"><a href="recover-password.html" class="card-link">Recover password</a></p>
+                    <p class="float-sm-right text-center m-0">New to Moden Admin? <a href="register-simple.html" class="card-link">Sign Up</a></p>
+                  </div>
+                </div> -->
+							</div>
+						</div>
+					</div>
+					
+					
+					 <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title"> Password Reset Request</h4>
+        </div>
+        <form id="myform-request">
+        <div class="modal-body">
+        
+        
+        <div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<label>User Name<span style="color: red">*</span></label> 
+													<input class="form-control"
+														required="required"
+														name="userName"
+														id="userName"
+														placeholder="User Name">
+												</div>
+											</div>
+
+										</div>
+        
+        
+        </div>
+        <div class="modal-footer">
+        <button th:onclick="'createRequest()'" class="btn btn-outline-primary btn-lg">Request</button>
+											
+          <input type="reset" class="btn btn-outline-secondary btn-lg"
+											data-dismiss="modal" value="close">
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+					
+					
+					
+				</section>
+				
+				
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+	<!-- ////////////////////////////////////////////////////////////////////////////-->
+<!-- BEGIN VENDOR JS-->
+<script th:src="@{/app-assets/vendors/js/vendors.min.js}"
+	type="text/javascript"></script>
+<!-- BEGIN VENDOR JS-->
+<!-- BEGIN PAGE VENDOR JS-->
+<script th:src="@{/app-assets/vendors/js/forms/icheck/icheck.min.js}"
+	type="text/javascript"></script>
+<script
+	th:src="@{/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js}"
+	type="text/javascript"></script>
+<!-- END PAGE VENDOR JS-->
+
+<!-- BEGIN MODERN JS-->
+<script th:src="@{/app-assets/js/core/app-menu.js}"
+	type="text/javascript"></script>
+<script th:src="@{/app-assets/js/core/app.js}" type="text/javascript"></script>
+<!-- END MODERN JS-->
+
+<!-- BEGIN PAGE LEVEL JS-->
+<script src="@{/app-assets/js/scripts/forms/form-login-register.js}"
+	type="text/javascript"></script>
+<!-- END PAGE LEVEL JS-->
+	<script th:src="@{/app-assets/vendors/js/extensions/sweetalert.min.js}"
+		type="text/javascript"></script>
+	<script th:inline="javascript">
+	
+	
+	
+	function createRequest()
+	{
+		$('#myform-request').submit(function(e){     
+
+	        e.preventDefault();
+	        e.stopImmediatePropagation();
+	        var name = $('#userName').val();
+	        
+	    
+	        
+	        
+	 
+			
+	        $.ajax({
+	        	type: 'post',
+	        	 url: /*[[ @{'/reset/request'} ]]*/,
+	        	 data:  {userName:name},
+				  success: function(returnedData){
+					  console.log(returnedData);
+					  //$(currenttabid).html(returnedData);
+					 $('#myModal').modal('hide'); 
+					  swal("Created!", "Your request has been Submitted.", "success"); 
+					  
+					 
+					  
+					},         
+	        });
+	    });
+	}
+	</script>
+
+</body>
+
+
+
+</html>

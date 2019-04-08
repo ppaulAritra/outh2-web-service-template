@@ -1,0 +1,26 @@
+
+<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow"
+	data-scroll-to-active="true" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="leftsidebar">
+
+	<div class="main-menu-content">
+		<ul class="navigation navigation-main" id="main-menu-navigation"
+			data-menu="menu-navigation"
+			th:with="path=${#httpServletRequest.getServletPath()}">
+
+			<li class=" nav-item"
+				th:classappend="${#strings.startsWith(path,'/home')? 'active' : ''}"><a
+				th:href="@{/home}"><i class="material-icons">dashboard</i><span
+					class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a></li>
+	
+
+		
+		</ul>
+	</div>
+</div>
+
+
+<script>
+	
+</script>
+

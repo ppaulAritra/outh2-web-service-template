@@ -1,0 +1,290 @@
+
+<nav
+	class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-dark navbar-shadow"
+	xmlns:th="http://www.thymeleaf.org" th:fragment="header">
+	<div class="navbar-wrapper">
+		<div class="navbar-header">
+			<ul class="nav navbar-nav flex-row">
+				<li class="nav-item mobile-menu d-md-none mr-auto"><a
+					class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i
+						class="ft-menu font-large-1"></i></a></li>
+				<li class="nav-item mr-auto"><a class="navbar-brand"> <!-- <img class="brand-logo" alt="modern admin logo" th:src="@{/app-assets/images/logo/logo.png}"> -->
+						<h3 class="brand-text">Menu</h3>
+				</a></li>
+				<li class="nav-item d-none d-md-block float-right"><a
+					class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+						class="toggle-icon ft-toggle-right font-medium-3 white"
+						data-ticon="ft-toggle-right"></i></a></li>
+				<li class="nav-item d-md-none"><a
+					class="nav-link open-navbar-container" data-toggle="collapse"
+					data-target="#navbar-mobile"><i class="la la-ellipsis-v"></i></a></li>
+			</ul>
+		</div>
+		<div class="navbar-container content">
+			<div class="collapse navbar-collapse" id="navbar-mobile">
+				<ul class="nav navbar-nav mr-auto float-left">
+					<li class="col-md-3 col-lg-3"><!-- <span
+						th:if="${companymenu.logo != null}"><img
+							th:src="@{${baseLocation+companymenu.logo.url}}"
+							style="max-width: 100%; height: 37px;" title="TODO" /></span> --></li>
+
+					<li style="text-align: center"><h3 style="margin: 3px">
+							<span>Capital Express</span>
+						</h3></li>
+
+				</ul>
+				<ul class="nav navbar-nav float-right">
+					<li class="dropdown dropdown-user nav-item"><a
+						class="dropdown-toggle nav-link dropdown-user-link" href="#"
+						data-toggle="dropdown">  <span class="avatar avatar-online">
+								<!-- <img th:src="@{${baseLocation+profileimage.url}}"
+								th:if="${profileimage != null}"
+								style="max-width: 100%; height: auto;" title="TODO" alt="avatar"> -->
+								<img
+								th:src="@{/app-assets/images/portrait/small/avatar-s-19.png}"
+								th:if="${profileimage == null}"
+								style="max-width: 100%; height: auto;" title="TODO" alt="avatar">
+								<i></i>
+						</span>
+					</a>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" th:href="@{/myprofile}"><i
+								class="ft-user"></i> My Profile</a>
+								 <a class="dropdown-item"
+								th:href="@{/password}"><i class="ft-user"></i> Change My
+								Password</a>
+
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" th:href="@{/logout}"
+								th:onclick="'javascript:deleteAllCookies();'"><i
+								class="ft-power"></i> Logout</a>
+						</div></li>
+
+					<li class="dropdown dropdown-notification nav-item"><a
+						class="nav-link nav-link-label" href="#" data-toggle="dropdown"
+						th:onclick="'javascript:loadNotification();'"><i
+							class="ficon ft-bell"></i> <span
+							class="notification-count badge badge-pill badge-default badge-danger badge-default badge-up badge-glow"></span>
+					</a>
+						<ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+							<li class="dropdown-menu-header">
+								<h6 class="dropdown-header m-0">
+									<span class="grey darken-2">Notifications</span>
+								</h6> <span
+								class="notification-tag badge badge-default badge-danger float-right m-0"></span>
+							</li>
+							<li class="scrollable-container media-list w-100"><a
+								href="javascript:void(0)" class="notification-list">
+									<div class="media">
+										<div class="media-left align-self-center">
+											<i class="ft-check-circle icon-bg-circle bg-cyan"></i>
+										</div>
+										<div class="media-body">
+											<h6 class="media-heading">Complete the task</h6>
+											
+										</div>
+									</div>
+							</a></li>
+							<li class="dropdown-menu-footer"><a
+								class="dropdown-item text-muted text-center"
+								th:href="@{/notification/view}">See all notifications</a></li>
+						</ul></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://js.pusher.com/4.2/pusher.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+	<script th:inline="javascript">
+	
+	
+  /* 	var loaded = [[${loaded}]];
+  	var role = [[${rolenamecode}]]; */
+  	
+  	var loaded="first";
+  	
+  	console.log("loaded is"+loaded);
+  	if(loaded ==="first")
+	{
+	  setCookie("currentcount","",1); 
+    }
+  
+  
+  
+  function setCookie(cname, cvalue, exdays) {
+	    var d = new Date();
+	    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	    var expires = "expires="+d.toUTCString();
+	    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+	function getCookie(cname) {
+	    var name = cname + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i = 0; i < ca.length; i++) {
+	        var c = ca[i];
+	        while (c.charAt(0) == ' ') {
+	            c = c.substring(1);
+	        }
+	        if (c.indexOf(name) == 0) {
+	            return c.substring(name.length, c.length);
+	        }
+	    }
+	    return "";
+	}
+	
+	
+	
+		var servercount ;
+	  	var currentcount;
+	 	 var totalcount ;
+	
+		if(getCookie("servercount") === "")
+		{
+			
+			servercount =  [[${notificationcount}]];
+		}
+		else if(getCookie("servercount") === "0")
+		{
+			servercount = parseInt(getCookie("servercount"));
+		}
+	  currentcount = getCookie("currentcount"); 
+	  
+	   if(isNaN(parseInt(currentcount)) && isNaN(parseInt(servercount)))
+		{
+		   totalcount = 0;
+		  
+		}
+	  else if(isNaN(parseInt(currentcount)))
+		{
+		  totalcount = parseInt(servercount);
+		  
+		}
+	  else if(isNaN(parseInt(servercount)))
+		{
+		  totalcount = parseInt(currentcount);
+		  
+		}
+	  else
+		{
+
+		  totalcount = parseInt(servercount)+parseInt(currentcount);
+		}
+	  
+	  
+	 
+	  
+	  
+	 console.log("servercount number is"+servercount);
+	 console.log("currentcount number is"+" "+currentcount);
+	 console.log("totalcount"+" "+totalcount);
+	 
+	 
+	 console.log("servercount number from cookie is"+getCookie("servercount"));
+	 console.log("currentcount number from cookie is"+" "+getCookie("currentcount"));
+	 
+	
+	 $('.notification-count').text(totalcount);
+	 
+	 if(totalcount === 0)
+		{
+		  
+		  document.getElementsByClassName("notification-count")[0].innerHTML="";
+		}
+	  	if(isNaN(totalcount))
+	 	{
+	 		document.getElementsByClassName("notification-count")[0].innerHTML="";
+	 	} 
+	 	
+  
+	
+	// document.getElementsByClassName("notification-count")[0].innerHTML="";
+	 
+	 
+   $('.dropdown-notification').on('click',function(){
+	  
+	  // loadNotification();
+	  setCookie("servercount",0,1); 
+	  setCookie("currentcount",0,1); 
+	  document.getElementsByClassName("notification-count")[0].innerHTML="";
+	  $('.notification-tag').text("");
+  }) 
+  
+  
+  function deleteAllCookies() {
+		
+		setCookie("servercount","",1); 
+		setCookie("currentcount","",1); 
+		sessionStorage.clear();
+	}
+  
+ 
+   
+   
+   
+ 
+
+  
+      var loggedinuserid=[[${loggedinuserid}]];
+
+      var channel =  loggedinuserid + '-channel';
+      var event = loggedinuserid +'-event';
+
+      
+
+      // Enable pusher logging - don't include this in production
+      Pusher.logToConsole = true;
+
+  /
+	 var pusher = new Pusher('f9cd9e6f5353bbcfc529', {
+	     cluster: 'ap1',
+	     encrypted: true
+	 });
+      var channel = pusher.subscribe(channel);
+
+      channel.bind(event, function(data) {
+        
+         
+         if(isNaN(parseInt(currentcount)))
+        {
+        	 currentcount =0;
+        }
+         currentcount=currentcount+1;
+   	 	 setCookie("currentcount",currentcount,1); 
+         
+	   	  if(isNaN(parseInt(totalcount)))
+	      {
+	   		totalcount =0;
+	      }
+         totalcount = totalcount +1;
+           
+         $('.notification-tag').text(totalcount+" New");
+         $('.notification-count').text(totalcount);
+        
+      });
+      
+    
+      function loadNotification()
+  	{
+  		
+  		
+  	}
+      
+      function viewDetailedNotification(resourceType){
+    	  
+    	
+  		
+  	}
+  </script>
+
+</nav>
+
+
+
